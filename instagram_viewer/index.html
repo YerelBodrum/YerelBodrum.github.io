@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yerel Bodrum - Instagram Viewer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+
+<body>
+
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo">Yerel Bodrum</div>
+            <div class="actions">
+                <i class="far fa-heart"></i>
+                <i class="far fa-paper-plane"></i>
+            </div>
+        </header>
+
+        <!-- Stories (Optional visual touch) -->
+        <div class="stories-container">
+            <div class="story">
+                <div class="story-ring">
+                    <img src="assets/salicornia.png" alt="Profile">
+                </div>
+                <span>Keşfet</span>
+            </div>
+            <div class="story">
+                <div class="story-ring">
+                    <img src="assets/sedum.png" alt="Profile">
+                </div>
+                <span>Tarifler</span>
+            </div>
+        </div>
+
+        <!-- Feed -->
+        <div id="feed-view">
+            <div id="feed-container">
+                <!-- Posts will be injected here by JS -->
+            </div>
+        </div>
+
+        <!-- Profile View -->
+        <div id="profile-view" style="display: none;">
+            <div class="profile-header">
+                <div class="profile-image-container">
+                    <img src="assets/logo.png" alt="Profile Logo" class="profile-logo">
+                </div>
+                <div class="profile-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">12</span>
+                        <span class="stat-label">Gönderi</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">1.2B</span>
+                        <span class="stat-label">Takipçi</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">45</span>
+                        <span class="stat-label">Takip</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-bio">
+                <div class="bio-name">Yerel Bodrum | Yabani Otlar & Tarifler</div>
+                <div class="bio-category">Gastro-Botanical Guide</div>
+                <div class="bio-text">
+                    🌿 Bodrum'un yenilebilir otları ve hikayeleri.<br>
+                    📚 Tarih, Şifa ve Lezzet.<br>
+                    🌊 Kıyıdan dağa lezzet haritası.<br>
+                    👇 <b>Rehberi İncele</b>
+                </div>
+                <div class="bio-link">yerelbodrum.com</div>
+            </div>
+
+            <div class="profile-highlights">
+                <div class="highlight-item">
+                    <div class="highlight-circle"><i class="fas fa-search"></i></div>
+                    <span>Keşfet</span>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-circle"><i class="fas fa-utensils"></i></div>
+                    <span>Tarifler</span>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-circle"><i class="far fa-calendar-alt"></i></div>
+                    <span>Mevsim</span>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-circle"><i class="fas fa-book"></i></div>
+                    <span>Sözlük</span>
+                </div>
+            </div>
+
+            <div class="profile-tabs">
+                <div class="tab active"><i class="fas fa-th"></i></div>
+                <div class="tab"><i class="fas fa-video"></i></div>
+                <div class="tab"><i class="far fa-bookmark"></i></div>
+                <div class="tab"><i class="fas fa-user-tag"></i></div>
+            </div>
+
+            <div class="profile-grid" id="profile-grid">
+                <!-- Grid items injected by JS -->
+            </div>
+        </div>
+
+        <!-- Bottom Nav -->
+        <nav class="bottom-nav">
+            <i class="fas fa-home active"></i>
+            <i class="fas fa-search"></i>
+            <i class="far fa-plus-square"></i>
+            <i class="far fa-heart"></i>
+            <div class="profile-icon">
+                <img src="assets/salicornia.png" alt="Profile">
+            </div>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
