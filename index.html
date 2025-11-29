@@ -1,131 +1,126 @@
 <!DOCTYPE html>
 <html lang="tr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yerel Bodrum - Instagram Viewer</title>
-    <link rel="stylesheet" href="styles.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-</head>
+    <title>Yerel Bodrum - Bodrum'un Bitki Mirası</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c5f2d;
+            --secondary-color: #97bc62;
+            --accent-color: #ffc857;
+            --text-color: #333;
+            --light-bg: #f4f7f6;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #fff;
+            padding: 20px 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .hero {
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            background: linear-gradient(rgba(44, 95, 45, 0.8), rgba(44, 95, 45, 0.6)), url('instagram/assets/ebegumeci_habitat.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            background-color: #ffd680;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
 <body>
 
-    <div class="app-container">
-        <!-- Header -->
-        <header class="app-header">
-            <div class="logo">Yerel Bodrum</div>
-            <div class="actions">
-                <i class="far fa-heart"></i>
-                <i class="far fa-paper-plane"></i>
-            </div>
-        </header>
+    <header>
+        <a href="#" class="logo">Yerel Bodrum</a>
+    </header>
 
-        <!-- Stories (Optional visual touch) -->
-        <div class="stories-container">
-            <div class="story">
-                <div class="story-ring">
-                    <img src="assets/salicornia.png" alt="Profile">
-                </div>
-                <span>Keşfet</span>
-            </div>
-            <div class="story">
-                <div class="story-ring">
-                    <img src="assets/sedum.png" alt="Profile">
-                </div>
-                <span>Tarifler</span>
-            </div>
-        </div>
+    <section class="hero">
+        <h1>Bodrum'un Doğal Hazinelerini Keşfedin</h1>
+        <p>Ege'nin şifalı otları, yenilebilir bitkileri ve yerel florası hakkında kapsamlı bir rehber.</p>
+        <a href="/instagram/" class="cta-button">Bitki Veritabanını İncele</a>
+    </section>
 
-        <!-- Feed -->
-        <div id="feed-view">
-            <div id="feed-container">
-                <!-- Posts will be injected here by JS -->
-            </div>
-        </div>
+    <footer>
+        <p>&copy; 2025 Yerel Bodrum. Tüm hakları saklıdır.</p>
+    </footer>
 
-        <!-- Profile View -->
-        <div id="profile-view" style="display: none;">
-            <div class="profile-header">
-                <div class="profile-image-container">
-                    <img src="assets/logo.png" alt="Profile Logo" class="profile-logo">
-                </div>
-                <div class="profile-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">12</span>
-                        <span class="stat-label">Gönderi</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">1.2B</span>
-                        <span class="stat-label">Takipçi</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">45</span>
-                        <span class="stat-label">Takip</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="profile-bio">
-                <div class="bio-name">Yerel Bodrum | Yabani Otlar & Tarifler</div>
-                <div class="bio-category">Gastro-Botanical Guide</div>
-                <div class="bio-text">
-                    🌿 Bodrum'un yenilebilir otları ve hikayeleri.<br>
-                    📚 Tarih, Şifa ve Lezzet.<br>
-                    🌊 Kıyıdan dağa lezzet haritası.<br>
-                    👇 <b>Rehberi İncele</b>
-                </div>
-                <div class="bio-link">yerelbodrum.com</div>
-            </div>
-
-            <div class="profile-highlights">
-                <div class="highlight-item">
-                    <div class="highlight-circle"><i class="fas fa-search"></i></div>
-                    <span>Keşfet</span>
-                </div>
-                <div class="highlight-item">
-                    <div class="highlight-circle"><i class="fas fa-utensils"></i></div>
-                    <span>Tarifler</span>
-                </div>
-                <div class="highlight-item">
-                    <div class="highlight-circle"><i class="far fa-calendar-alt"></i></div>
-                    <span>Mevsim</span>
-                </div>
-                <div class="highlight-item">
-                    <div class="highlight-circle"><i class="fas fa-book"></i></div>
-                    <span>Sözlük</span>
-                </div>
-            </div>
-
-            <div class="profile-tabs">
-                <div class="tab active"><i class="fas fa-th"></i></div>
-                <div class="tab"><i class="fas fa-video"></i></div>
-                <div class="tab"><i class="far fa-bookmark"></i></div>
-                <div class="tab"><i class="fas fa-user-tag"></i></div>
-            </div>
-
-            <div class="profile-grid" id="profile-grid">
-                <!-- Grid items injected by JS -->
-            </div>
-        </div>
-
-        <!-- Bottom Nav -->
-        <nav class="bottom-nav">
-            <i class="fas fa-home active"></i>
-            <i class="fas fa-search"></i>
-            <i class="far fa-plus-square"></i>
-            <i class="far fa-heart"></i>
-            <div class="profile-icon">
-                <img src="assets/salicornia.png" alt="Profile">
-            </div>
-        </nav>
-    </div>
-
-    <script src="script.js"></script>
 </body>
-
 </html>
